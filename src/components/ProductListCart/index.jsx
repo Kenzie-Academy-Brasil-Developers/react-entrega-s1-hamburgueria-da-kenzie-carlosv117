@@ -23,7 +23,7 @@ const ProductListCart = ({ filteredProducts, setFilteredProducts }) => {
             {filteredProducts <= 0 ?
                 (
                     <div className='emptyCart'>
-                        <h3>Sua sacola stá vazia</h3>
+                        <h3>Sua sacola está vazia</h3>
                         <p>Adicione itens</p>
                     </div>
                 ) :
