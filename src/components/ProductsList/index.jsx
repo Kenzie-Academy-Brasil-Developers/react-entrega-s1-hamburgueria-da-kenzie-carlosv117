@@ -1,11 +1,13 @@
 import Product from "../Product"
-const ProductsList = ({ listProduct }) => {
+import "../Product/styles.css"
+const ProductsList = ({ listProduct, handleClick }) => {
 
     console.log(listProduct)
     return (
-        <ul>
+        <ul className="ProductList">
             {listProduct.map(product =>
-                <Product key={product.id} id={product.id} name={product.name} image={product.img} category={product.category} price={product.price} />)}
+                <Product key={product.id} id={product.id} name={product.name} image={product.img}
+                    category={product.category} price={product.price} handleClick={handleClick} />)}
         </ul>
 
     )

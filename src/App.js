@@ -1,12 +1,16 @@
 import './App.css';
+import './reset.css'
 import {React} from "react"
-import ProductsList from "./components/ProductsList"
 import {useState, useEffect} from "react"
+import Header from './components/Header';
+import ProductsList from "./components/ProductsList"
 import Cart from './components/Cart';
+
 
 function App() {
 
   const [listProduct, setListProduct] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
 
@@ -16,18 +20,27 @@ function App() {
 
   },[])
 
-  const showProducts = () =>{
+  // const showProducts = () =>{
 
-  }
+  // }
 
   const handleClick = (productId) => {
 
+    setFilteredProducts(...filteredProducts, listProduct.filter(product => product.id === productId))
+    
+
   }
+  console.log(filteredProducts)
 
   return (
     <div className="App">
-      <ProductsList listProduct={listProduct}/>
-      <Cart listProduct={listProduct}/>
+      <Header/>
+      <main>
+
+      <ProductsList listProduct={listProduct} handleClick={handleClick}/>
+      <Cart filteredProducts={filteredProducts}/>
+      
+      </main>
     </div>
   );
 }

@@ -1,18 +1,16 @@
-import handleClick from "../../App"
-const Product = ({ id, name, image, category, price }) => {
-
-    handleClick(id)
+import './styles.css'
+const Product = ({ id, name, image, category, price, handleClick }) => {
 
     return (
-        <li id={id}>
+        <li className="ListCart" id={id}>
             <figure>
                 <img src={image} alt={name} />
             </figure>
-            <div>
+            <div className="ListCart__Text">
                 <h1>{name}</h1>
                 <span>{category}</span>
-                <p>{price.toFixed(2)}</p>
-                <button></button>
+                <p>R$ {price.toFixed(2)}</p>
+                <button onClick={() => handleClick(id)}>Adicionar</button>
             </div>
         </li>
     )

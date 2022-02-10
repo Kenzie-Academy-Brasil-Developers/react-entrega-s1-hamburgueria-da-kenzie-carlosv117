@@ -1,0 +1,36 @@
+.Header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    height: 139px;
+}
+
+.Pesquisar{
+    display: flex;
+    align-items: center;
+    background-color: #FFF;
+    height: 60px;
+    padding: 0px 10px 0px 15px;
+    border: 2px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.Pesquisar input{
+    border: none;
+}
+
+.Pesquisar button{
+    padding: 0px 10px;
+    background: #27AE60;
+    color: #FFF;
+    height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border: 2px solid #27AE60;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
