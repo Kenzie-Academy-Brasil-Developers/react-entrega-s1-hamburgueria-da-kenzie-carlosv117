@@ -1,3 +1,37 @@
 .App {
   text-align: center;
 }
+
+.App main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 980px){
+  .App main{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 30px;
+  }
+
+  .App main .Cart{
+    margin-top: 0;
+    margin-left: 20px;
+    width: 500px;
+  }
+}
+
+@media (min-width: 1393px){
+  .App main .Cart{
+      width: 580px;
+  }
+}
+
+@media (min-width: 1453px){
+  .App main .Cart{
+      margin-left: 30px;
+  }
+}

@@ -4,13 +4,14 @@ import {React} from "react"
 import {useState, useEffect} from "react"
 import Header from './components/Header';
 import ProductsList from "./components/ProductsList"
-import Cart from './components/Cart';
+import ProductListCart from './components/ProductListCart';
 
 
 function App() {
 
   const [listProduct, setListProduct] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
 
@@ -20,25 +21,44 @@ function App() {
 
   },[])
 
-  // const showProducts = () =>{
+  const showProducts = () =>{
+    const searchFilter = listProduct.filter(product => 
 
-  // }
+      product.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLocaleLowerCase()))
+
+      setListProduct([...searchFilter])
+
+  }
 
   const handleClick = (productId) => {
 
-    setFilteredProducts(...filteredProducts, listProduct.filter(product => product.id === productId))
-    
+    const checkCard = filteredProducts.find(product => product.id === productId)
+    const click = listProduct.find(product => product.id === productId)
 
+    if(filteredProducts <= 0){
+
+      setFilteredProducts([...filteredProducts, click])
+
+    }else if(filteredProducts.includes(checkCard)){
+
+      alert("Não pode adicionar mais de um produto ao carrinho")
+
+    }else{
+
+      setFilteredProducts([...filteredProducts, click])
+
+    }
+    
   }
-  console.log(filteredProducts)
 
   return (
     <div className="App">
-      <Header/>
+      <Header setSearch={setSearch} showProducts={showProducts} listProduct={listProduct}/>
       <main>
 
       <ProductsList listProduct={listProduct} handleClick={handleClick}/>
-      <Cart filteredProducts={filteredProducts}/>
+      <ProductListCart filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
       
       </main>
     </div>

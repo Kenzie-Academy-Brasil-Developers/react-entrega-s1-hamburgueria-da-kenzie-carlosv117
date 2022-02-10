@@ -1,7 +1,9 @@
 import './styles.css'
+
 const Product = ({ id, name, image, category, price, handleClick }) => {
 
     return (
+
         <li className="ListCart" id={id}>
             <figure>
                 <img src={image} alt={name} />
@@ -13,6 +15,7 @@ const Product = ({ id, name, image, category, price, handleClick }) => {
                 <button onClick={() => handleClick(id)}>Adicionar</button>
             </div>
         </li>
+
     )
 }
 

@@ -1,0 +1,153 @@
+.Cart{
+    margin-top: 15px;
+    width: 295px;
+}
+
+.Cart .ShoppingCart{
+    display: flex;
+    align-items: center;
+    background: #27AE60;
+    color: #FFF;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    height: 65px;  
+    border-radius: 5px 5px 0px 0px;
+}
+
+.emptyCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    padding: 50px 10px;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px; 
+}
+
+.emptyCart h3{
+    color: #333333;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.emptyCart p{
+    color: #828282;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.container{
+    background: #F5F5F5;
+    padding: 1px 10px 20px 10px;
+    margin-bottom: 30px;
+    border-radius: 0px 0px 5px 5px;
+    overflow-y: auto;
+    max-height: 260px;
+}
+
+.listCart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.listCart figure{
+    background: #E0E0E0;
+    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+figure img{
+    width: 80%;
+    height: 100%;
+}
+
+.listCartName{
+    display: flex;
+}
+
+.listCartName div{
+    text-align: start;
+    margin-left: 10px;
+}
+
+.listCartName div h3{
+    color: #333333;
+    margin: 5px 0px 8px 0px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.listCartName div p{
+    color: #828282;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#lixeira{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#lixeira img{
+    width: 10px;
+    height: 10px;
+}
+
+.priceTotal{
+    margin-top: 20px;
+    border-top: solid 2px #E0E0E0;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.total p{
+    color: #333333;
+}
+
+.total span{
+    color: #828282;
+}
+
+.buttonRemove button{
+    background-color: #E0E0E0;
+    color: #828282;
+    width: 100%;
+    height: 60px;
+    border: 2px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.buttonRemove button:hover{
+    background-color: #828282;
+    border: 2px solid #828282;
+    color: #E0E0E0;
+    
+}
+
+

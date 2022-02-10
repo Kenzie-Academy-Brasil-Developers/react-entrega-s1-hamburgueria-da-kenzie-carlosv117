@@ -4,6 +4,15 @@
     flex-direction: column;
     background-color: #F5F5F5;
     height: 139px;
+    margin-bottom: 15px;
+}
+
+#Header__Logo{
+    margin: 20px 0px 15px 0px;
+}
+
+#Header__Logo img{
+    width: 100%;
 }
 
 .Pesquisar{
@@ -19,7 +28,9 @@
 
 .Pesquisar input{
     border: none;
+    outline: 0;
 }
+
 
 .Pesquisar button{
     padding: 0px 10px;
@@ -33,4 +44,19 @@
     border: 2px solid #27AE60;
     box-sizing: border-box;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+.Pesquisar button:hover{
+    background-color: #93D7AF;
+    border: 2px solid #93D7AF;
+}
+
+@media (min-width: 768px){
+    .Header{
+        flex-direction: row;
+        justify-content: space-between;
+        height: 90px;
+        padding: 0px 30px;
+    }
 }

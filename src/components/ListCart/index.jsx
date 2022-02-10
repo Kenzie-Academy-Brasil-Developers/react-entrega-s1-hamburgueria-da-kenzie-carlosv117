@@ -1,20 +1,26 @@
+import Lixeira from "../../assets/image/Lixeira.png"
 
-const ListCart = ({ id, name, image, category }) => {
+const ListCart = ({ id, name, image, category, remove }) => {
 
     return (
-        <li id={id}>
-            <figure>
-                <img src={image} alt={name} />
-            </figure>
-            <div ListCart__Text>
+
+        <li className="listCart" id={id}>
+
+            <div className="listCartName">
+                <figure>
+                    <img className="imagemVitrine" src={image} alt={name} />
+                </figure>
                 <div>
-                    <h2>{name}</h2>
+                    <h3>{name}</h3>
                     <p>{category}</p>
                 </div>
-                <button>Remover</button>
             </div>
+            <figure id="lixeira">
+                <img onClick={() => remove(id)} src={Lixeira} alt="Lixeira" />
+            </figure>
 
         </li>
+
     );
 }
 

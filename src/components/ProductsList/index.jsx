@@ -2,7 +2,6 @@ import Product from "../Product"
 import "../Product/styles.css"
 const ProductsList = ({ listProduct, handleClick }) => {
 
-    console.log(listProduct)
     return (
         <ul className="ProductList">
             {listProduct.map(product =>
