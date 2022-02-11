@@ -68,6 +68,10 @@
     height: 70px;
 }
 
+#lixeira:hover{
+    filter: brightness(0.8);
+}
+
 figure img{
     width: 80%;
     height: 100%;
@@ -145,6 +149,7 @@ figure img{
     font-weight: 600;
     font-size: 16px;
     line-height: 19px;
+    cursor: pointer;
 }
 
 .buttonRemove button:hover{

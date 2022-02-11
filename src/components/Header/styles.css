@@ -31,6 +31,10 @@
     border-radius: 8px;
 }
 
+.Pesquisar:hover{
+    border: 2px solid #333333;
+}
+
 .Pesquisar input{
     border: none;
     outline: 0;
