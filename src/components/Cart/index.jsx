@@ -7,7 +7,7 @@ const Cart = ({ filteredProducts, removeAll }) => {
         <div className="priceTotal">
             <div className="total">
                 <p>Total</p>
-                <span>{priceTotal.toFixed(2)}</span>
+                <span>R$ {priceTotal.toFixed(2)}</span>
             </div>
             <div className="buttonRemove">
                 <button onClick={() => removeAll()}>Remover todos</button>

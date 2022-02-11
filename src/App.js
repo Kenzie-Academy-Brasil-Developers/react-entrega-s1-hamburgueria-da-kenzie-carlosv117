@@ -64,7 +64,7 @@ function App() {
     }else if(filteredProducts.includes(checkCard)){
 
       // alert("Não pode adicionar mais de um produto ao carrinho")
-      toast.error("Não pode adicionar mais de um produto ao carrinho", {
+      toast.error("Não pode adicionar o mesmo produto duas vezes", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
