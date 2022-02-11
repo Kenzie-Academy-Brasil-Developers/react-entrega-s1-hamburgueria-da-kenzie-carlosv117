@@ -9,6 +9,11 @@
 
 #Header__Logo{
     margin: 20px 0px 15px 0px;
+    cursor: pointer;
+}
+
+#Header__Logo:hover{
+    filter: brightness(2);
 }
 
 #Header__Logo img{

@@ -12,6 +12,9 @@ function App() {
   const [listProduct, setListProduct] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [search, setSearch] = useState("")
+  const [searchRunning, setSearchRunning] = useState([])
+  const [checking, setChecking] = useState(true)
+
 
   useEffect(() => {
 
@@ -21,13 +24,29 @@ function App() {
 
   },[])
 
+  const Logo = () => {
+
+    setChecking(true)
+  }
+
+  const Running = () => {
+    setSearchRunning([...listProduct])
+  }
+
   const showProducts = () =>{
+    Running()
+
     const searchFilter = listProduct.filter(product => 
+      product.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").includes(search.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")) ||
+      product.category.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").includes(search.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")))
 
-      product.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
-      product.category.toLowerCase().includes(search.toLocaleLowerCase()))
-
-      setListProduct([...searchFilter])
+      if(searchFilter <=0 || searchFilter === []){
+        setChecking(false)
+        setSearchRunning([...listProduct])
+      }else{
+        setChecking(false)
+        setSearchRunning([...searchFilter])
+      }
 
   }
 
@@ -54,10 +73,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header setSearch={setSearch} showProducts={showProducts} listProduct={listProduct}/>
+      
+      <Header setSearch={setSearch} showProducts={showProducts} listProduct={listProduct} Logo={Logo}/>
       <main>
 
-      <ProductsList listProduct={listProduct} handleClick={handleClick}/>
+      {checking ? 
+
+        (
+          <ProductsList listProduct={listProduct} handleClick={handleClick}/>
+        ):
+        (
+          <ProductsList listProduct={searchRunning} handleClick={handleClick}/>
+        )}
+      
       <ProductListCart filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
       
       </main>

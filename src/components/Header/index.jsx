@@ -1,13 +1,13 @@
 import './styles.css'
-import Logo from "../../assets/image/Logo.png"
+import logo from "../../assets/image/Logo.png"
 
-const Header = ({ setSearch, showProducts, listProduct }) => {
+const Header = ({ setSearch, showProducts, listProduct, Logo }) => {
 
     return (
 
         <header className="Header">
             <figure id='Header__Logo'>
-                <img onClick={() => listProduct} src={Logo} alt="Burguer Kenzie" />
+                <img onClick={() => Logo()} src={logo} alt="Burguer Kenzie" />
             </figure>
             <div className="Pesquisar">
                 <input type="text" placeholder="Digitar Pesquisa" onChange={(event) => setSearch(event.target.value)} />

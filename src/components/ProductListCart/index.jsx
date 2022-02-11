@@ -1,7 +1,6 @@
 import './styles.css'
 import ListCart from "../ListCart"
 import Cart from "../Cart"
-import { useState } from 'react'
 
 const ProductListCart = ({ filteredProducts, setFilteredProducts }) => {
 
@@ -28,13 +27,15 @@ const ProductListCart = ({ filteredProducts, setFilteredProducts }) => {
                     </div>
                 ) :
                 (
-                    <ul className='container'>
-                        {filteredProducts.map(product => <ListCart
-                            key={product.id} id={product.id} name={product.name} image={product.img}
-                            category={product.category} price={product.price} remove={remove} />)}
+                    <div className='Cont'>
+                        <ul className='container'>
+                            {filteredProducts.map(product => <ListCart
+                                key={product.id} id={product.id} name={product.name} image={product.img}
+                                category={product.category} price={product.price} remove={remove} />)}
 
+                        </ul>
                         <Cart filteredProducts={filteredProducts} removeAll={removeAll} />
-                    </ul>
+                    </div>
                 )}
 
         </section>

@@ -1,3 +1,8 @@
+.Cont{
+    background-color: #F5F5F5;
+    padding: 1px 10px 20px 10px;
+}
+
 .Cart{
     margin-top: 15px;
     width: 295px;
@@ -43,9 +48,8 @@
 
 .container{
     background: #F5F5F5;
-    padding: 1px 10px 20px 10px;
-    margin-bottom: 30px;
     border-radius: 0px 0px 5px 5px;
+    padding-right: 10px;
     overflow-y: auto;
     max-height: 260px;
 }
