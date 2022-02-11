@@ -1,5 +1,7 @@
 import './App.css';
 import './reset.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 import {React} from "react"
 import {useState, useEffect} from "react"
 import Header from './components/Header';
@@ -61,7 +63,16 @@ function App() {
 
     }else if(filteredProducts.includes(checkCard)){
 
-      alert("Não pode adicionar mais de um produto ao carrinho")
+      // alert("Não pode adicionar mais de um produto ao carrinho")
+      toast.error("Não pode adicionar mais de um produto ao carrinho", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
 
     }else{
 
@@ -80,10 +91,16 @@ function App() {
       {checking ? 
 
         (
+          <section>
           <ProductsList listProduct={listProduct} handleClick={handleClick}/>
+          <ToastContainer />
+          </section>
         ):
         (
+          <section>
           <ProductsList listProduct={searchRunning} handleClick={handleClick}/>
+          <ToastContainer />
+          </section>
         )}
       
       <ProductListCart filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
