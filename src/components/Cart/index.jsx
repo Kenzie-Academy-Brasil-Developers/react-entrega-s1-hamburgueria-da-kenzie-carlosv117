@@ -1,7 +1,6 @@
 const Cart = ({ filteredProducts, removeAll }) => {
 
-    const prices = filteredProducts.map(price => price.price)
-    const priceTotal = prices.reduce((valorTotal, valorAtual) => (valorTotal + valorAtual), 0)
+    const priceTotal = filteredProducts.reduce((valorTotal, valorAtual) => (valorTotal + valorAtual.price), 0)
 
     return (
         <div className="priceTotal">

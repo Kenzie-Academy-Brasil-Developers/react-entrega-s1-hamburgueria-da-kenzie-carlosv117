@@ -17,7 +17,6 @@ function App() {
   const [searchRunning, setSearchRunning] = useState([])
   const [checking, setChecking] = useState(true)
 
-
   useEffect(() => {
 
     fetch("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
@@ -26,7 +25,7 @@ function App() {
 
   },[])
 
-  const Logo = () => {
+  const Back = () => {
 
     setChecking(true)
   }
@@ -63,16 +62,7 @@ function App() {
 
     }else if(filteredProducts.includes(checkCard)){
 
-      // alert("Não pode adicionar mais de um produto ao carrinho")
-      toast.error("Não pode adicionar o mesmo produto duas vezes", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+      toast.error("Não pode adicionar o mesmo produto duas vezes")
 
     }else{
 
@@ -85,7 +75,7 @@ function App() {
   return (
     <div className="App">
       
-      <Header setSearch={setSearch} showProducts={showProducts} listProduct={listProduct} Logo={Logo}/>
+      <Header setSearch={setSearch} showProducts={showProducts} Back={Back}/>
       <main>
 
       {checking ? 
